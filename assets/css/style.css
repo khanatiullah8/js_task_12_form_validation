@@ -1,0 +1,339 @@
+@charset "utf-8";
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/*for all*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --clr-black: #222;
+  --clr-grey: #999;
+  --clr-white: #fff;
+  --clr-red: #EA4335;
+  --clr-blue1: #369FE3;
+  --clr-blue2: #225FAB;
+  --clr-green: #34A853;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+span { display: inline-block; }
+::first-letter { text-transform: uppercase; }
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1360px;
+  width: 86%; 
+  margin: 0 auto;
+}
+
+/*=================================
+  main styling starts here
+=================================*/
+
+.newsletter-signup .wrapper {
+  width: 60%;
+  padding: 50px 0;
+}
+
+.section-heading {
+  color: var(--clr-blue2);
+  font-size: 24px;
+}
+
+.error-message {
+  width: 100%;
+  margin: 10px 0;
+  color: var(--clr-red);
+  font-size: 14px;
+  text-align: center;
+  visibility: hidden;
+}
+
+.error-message.active { visibility: visible; }
+
+.error-message::before,
+.error-message::after {
+  content: ' *** ';
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label,
+.input-group p,
+.input-group .gender-heading,
+.privacy-policy p {
+  color: var(--clr-black);
+  font-size: 13px;
+}
+
+.input-group input[type],
+.input-group select,
+.input-control input {
+  width: 30%;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  margin: 10px 0 3px;
+  box-shadow: inset 0 0 5px #666;
+  outline: none;
+}
+
+.input-group select {
+  background-color: var(--clr-blue1);
+  color: var(--clr-white);
+  cursor: pointer;  
+}
+
+.input-group select > * { background-color: var(--clr-blue2); }
+
+.alert {
+  color: var(--clr-red);
+  font-size: 11px;
+  visibility: hidden;
+}
+
+.alert::before {
+  content: '*';
+  font-size: 13px;
+}
+
+.alert.active { visibility: visible; }
+
+.gender-box,
+.yesNo-box {
+  margin-top: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gender-box > div,
+.yesNo-box > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gender-box input[type='radio'],
+.yesNo-box input[type='radio'] {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.gender-box input[type='radio']:checked + span,
+.yesNo-box input[type='radio']:checked + span {
+  background-color: var(--clr-blue2);
+}
+
+.gender-box label,
+.yesNo-box label {
+  order: 2;
+}
+
+.gender-box .custom-checkbox,
+.yesNo-box .custom-checkbox {
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--clr-grey);
+  order: 1;
+  text-indent: -99999px;
+}
+
+.privacy-policy a {
+  color: var(--clr-blue1);
+  text-transform: lowercase;
+  transition: all .3s;
+}
+
+.privacy-policy a::before { content: " "; }
+.privacy-policy a:hover { text-decoration: underline; }
+
+.input-control input {
+  width: 18%;
+  background-color: var(--clr-blue1);
+  box-shadow: none;
+  color: var(--clr-white);
+  text-transform: capitalize;
+  transition: all .3s;
+}
+
+.input-control input:hover { background-color: var(--clr-blue2); }
+
+/* form filled data output section start */
+.form-input-values {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input-values li {
+  padding: 4px;
+  border-bottom: 2px solid var(--clr-green);
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-input-values li:first-child { border-top: 2px solid var(--clr-green); }
+.form-input-values li span { padding: 4px 0; }
+
+.form-input-values li span:first-child {
+  border-right: 2px solid var(--clr-green);
+  flex-basis: 25%;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.form-input-values li span:last-child {
+  flex-basis: 73%;
+}
+
+.form-input-values li span:last-child::first-letter {
+  text-transform: initial;
+}
+/* form filled data output section end */
+
+/*=================================
+  main styling ends here
+=================================*/
+
+/*media query starts*/
+/*media query for max-width: 1024px starts here*/
+@media only screen and (max-width: 1024px) {
+
+  .newsletter-signup .wrapper { width: 85%; }
+
+  .input-group input[type],
+  .input-group select,
+  .input-control input {
+    width: 50%;
+  }
+  
+  .input-control input { width: 30%; }
+
+}  
+
+/*media query for max-width: 767px starts here*/
+@media only screen and (max-width: 767px) {
+
+  .newsletter-signup .wrapper { width: 95%; }
+
+  .input-group input[type],
+  .input-group select,
+  .input-control input {
+    width: 100%;
+  }  
+
+}  

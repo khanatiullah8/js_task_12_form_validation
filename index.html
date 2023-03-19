@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Form Validation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" />
+  <!--font-awesome link for icons-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Default style-sheet is for 'media' type screen (color computer display).  -->
+  <link rel="stylesheet" media="screen" href="assets/css/style.css">
+</head>
+<body>
+  <!--container start-->
+  <div class="container">
+    <!--main section start-->
+    <main>
+      <section class="newsletter-signup">
+        <div class="wrapper">
+          <h3 class="section-heading">enter your details to subscribe to our newsletter</h3>
+          <span class="error-message">fill all inputs</span>
+          <form action="#FIXME" method="get" name="form">
+            <div class="input-group">
+              <label for="fname">first name</label>
+              <input type="text" name="fname" id="fname" autocomplete="off">
+              <span class="alert">enter alphabets only</span>
+            </div>
+            <div class="input-group">
+              <label for="lname">last name</label>
+              <input type="text" name="lname" id="lname" autocomplete="off">
+              <span class="alert">enter alphabets only</span>
+            </div>
+            <div class="input-group">
+              <label for="mobile">mobile</label>
+              <input type="text" name="mobile" id="mobile" autocomplete="off">
+              <span class="alert">enter only 10 numbers starts with 7/8/9</span>
+            </div>
+            <div class="input-group">
+              <label for="position">position</label>
+              <input type="text" name="position" id="position" autocomplete="off">
+              <span class="alert">enter alphabets only</span>
+            </div>
+            <div class="input-group">
+              <label for="company">company</label>
+              <input type="text" name="company" id="company" autocomplete="off">
+              <span class="alert">enter alphabets only</span>
+            </div>
+            <div class="input-group">
+              <label for="companytype">company type</label>
+              <select name="companytype" id="companytype">
+                <option value="">- select -</option>
+                <option value="type 1">type 1</option>
+                <option value="type 2">type 2</option>
+                <option value="type 3">type 3</option>
+                <option value="type 4">type 4</option>
+              </select>
+              <span class="alert">select company type</span>
+            </div>
+            <div class="input-group">
+              <label for="country">country</label>
+              <select name="country" id="country">
+                <option value="">- choose -</option>
+                <option value="country 1">country 1</option>
+                <option value="country 2">country 2</option>
+                <option value="country 3">country 3</option>
+                <option value="country 4">country 4</option>
+              </select>
+              <span class="alert">select country</span>
+            </div>
+            <div class="input-group">
+              <label for="workemail">work email</label>
+              <input type="email" name="workemail" id="workemail" placeholder="monilv@prdxn.com" autocomplete="off">
+              <span class="alert">enter valid email (eg: monilv@prdxn.com)</span>
+            </div>
+            <div class="input-group">
+              <label for="password">password</label>
+              <input type="password" name="password" id="password" autocomplete="off">
+              <span class="alert">atleast 1 speacial character, 1 capital, 1 small, 1 number &amp; length count between 5 to 10</span>
+            </div>
+            <div class="input-group">
+              <label for="cPassword">confirm password</label>
+              <input type="password" name="cPassword" id="cPassword" autocomplete="off">
+              <span class="alert">password do not match, try again</span>
+            </div>
+            <div class="input-group">
+              <span class="gender-heading">select gender</span>
+              <div class="gender-box">
+                <div class="male-box">
+                  <label for="male">male</label>
+                  <input type="radio" name="gender" id="male" value="male">
+                  <span class="custom-checkbox">check</span>
+                </div>
+                <div class="female-box">
+                  <label for="female">female</label>
+                  <input type="radio" name="gender" id="female" value="female">
+                  <span class="custom-checkbox">check</span>
+                </div>
+              </div>
+              <span class="alert">select your gender</span>
+            </div>
+            <div class="input-group">
+              <p class="gender-heading">euroFinance is part of the economist group. Would you also like to receive information on subscription offers, Economist events and other product via email&quest;</p>
+              <div class="yesNo-box">
+                <div class="yes-box">
+                  <label for="yes">yes</label>
+                  <input type="radio" name="yesNo" id="yes" value="yes">
+                  <span class="custom-checkbox">check</span>
+                </div>
+                <div class="no-box">
+                  <label for="no">no</label>
+                  <input type="radio" name="yesNo" id="no" value="no">
+                  <span class="custom-checkbox">check</span>
+                </div>
+              </div>
+              <span class="alert">select any one</span>
+            </div>
+            <div class="input-group">
+              <label for="imageFile">select image</label>
+              <input type="file" id="imageFile" name="imgFile">
+              <span class="alert">select image</span>
+            </div>
+            <div class="privacy-policy">
+              <p>the Economist Group is a global organisation and operates a strict privacy policy around the world. You can view our privacy policy at <a href="#FIXME" title="www.economistgroup.com/privacy">www.economistgroup.com/privacy</a>
+              </p>
+            </div>
+            <div class="input-control">
+              <input type="submit" value="submit">
+            </div>
+          </form>
+          <!-- form filled data output section start -->
+          <ul class="form-input-values">
+            <li>
+              <span>first name</span>
+              <span class="first-name"></span>
+            </li>
+            <li>
+              <span>last name</span>
+              <span class="last-name"></span>
+            </li>
+            <li>
+              <span>mobile</span>
+              <span class="mobile"></span>
+            </li>
+            <li>
+              <span>position</span>
+              <span class="position"></span>
+            </li>
+            <li>
+              <span>company</span>
+              <span class="company"></span>
+            </li>
+            <li>
+              <span>company type</span>
+              <span class="company-type"></span>
+            </li>
+            <li>
+              <span>country</span>
+              <span class="country"></span>
+            </li>
+            <li>
+              <span>work email</span>
+              <span class="work-email"></span>
+            </li>
+            <li>
+              <span>password</span>
+              <span class="password"></span>
+            </li>
+            <li>
+              <span>gender</span>
+              <span class="gender"></span>
+            </li>
+            <li>
+              <span>yes / no</span>
+              <span class="yes-no"></span>
+            </li>
+            <li>
+              <span>image</span>
+              <span class="image"></span>
+            </li>
+          </ul>
+          <!-- form filled data output section end -->
+        </div>
+      </section>
+    </main>
+  </div>
+  <!--container end-->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
